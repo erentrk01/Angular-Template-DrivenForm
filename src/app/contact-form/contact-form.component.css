@@ -1,0 +1,29 @@
+.form-control.ng-touched.ng-invalid{
+
+    border:2px solid red;
+}
+
+.container{
+    width:420px;
+}
+label{
+    color:rgb(31, 31, 231);
+}
+
+.card{
+    
+    height:640px;
+}
+#comment{
+    position: absolute;
+    margin-left:390px;
+    margin-bottom:190px;
+    height:90px;
+    
+}
+
+
+.card-header{
+
+    color:red  !important;
+}

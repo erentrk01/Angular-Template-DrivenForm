@@ -1,0 +1,10 @@
+
+<ul>
+<li><label for="angular">Angular</label><input  ngModel #rd="ngModel" type="radio" name="lang" id="angular" value="angular" (change)="radiochange($event)"></li>
+<li><label for="react">React</label><input ngModel  #r2="ngModel"   type="radio" name="lang" id="react" value="react"  (change)="radiochange($event)" ></li>
+<li><label for="angular">Vue</label><input  #r3="ngModel"  ngModel type="radio" name="lang" id="vue" value="vue"  (change)="radiochange($event)"  ></li>
+<li><label for="node">Node.js</label><input #r4="ngModel"  ngModel    type="radio" name="lang" id="nodejs" value="nodejs"  (change)="radiochange($event)"  ></li>
+<li><label for="asp">Asp.net</label><input #r5="ngModel"  ngModel  type="radio" name="lang" id="asp" value="asp"  (change)="radiochange($event)"  ></li>
+</ul>
+
+<h2 *ngIf="rd.dirty ||r2.dirty||r3.dirty||r4.dirty||r5.dirty"> {{"We need a " +devName}} </h2>

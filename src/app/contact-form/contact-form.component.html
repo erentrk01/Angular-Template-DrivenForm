@@ -1,0 +1,62 @@
+<div class="container align-items-center justify-content-center card border-secondary mb-3 bg-light " >
+
+    <div class="card-header">Angular Template Driven Form</div>
+    <div class="card-body text-secondary">
+<form  >
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input 
+        required
+        minlength="3" 
+        maxlength="10"
+        pattern="[a-zA-Z]+" 
+        ngModel name="firstName" #firstName="ngModel"
+        id="firstName"
+        type="text"
+        class="form-control" >
+   <div class="alert alert-danger" *ngIf="!firstName.valid && firstName.touched">
+       <div *ngIf="firstName.errors?.['required']">You must enter a name!</div>
+       <div *ngIf="firstName.errors?.['minlength']">It should me minumum 3 letters!</div>
+       <div *ngIf="firstName.errors?.['maxlength']">It should be less then 10 letters</div>
+       <div *ngIf="firstName.errors?.['pattern']">You can only use letters!</div>
+   </div>
+    </div>
+ 
+    <div class="form-group">
+       <label for="Field">Field</label>
+       <input type="text" required name="field" ngModel #field="ngModel" class="form-control" id="field">
+       <div class="alert alert-danger" *ngIf="field.touched&& !field.valid">Please enter your field related IT</div>
+    </div>
+   
+    <div class="form-group">
+        <label for="comment">Tell us about your experince</label><input type="text"  required ngModel #comment="ngModel"  name="comment" cols="30" rows="10" class="form-control">
+        
+    </div>
+    
+    <div id="comment"  *ngIf="comment.touched &&!comment.errors?.['required']" class="card text-white bg-success mb-3" style="max-width: 18rem;">
+        <div   class="card-header">Wow, that seems impressive!</div>
+        <div class="card-body">
+          <h5 class="card-title">We will inform you soon!</h5>
+          <p class="card-text">The form will be send to our hiring team</p>
+        </div>
+      </div>
+    
+     
+
+      <div class="form-group  ">
+
+      
+
+        <h4  *ngIf="firstName.valid and firstName.dirty" ><i> {{"Dear " +firstName.value}}</i> </h4>
+          <label for="langs">Which software technology do you wanna use?</label>
+         
+          <app-lang-component></app-lang-component>
+      
+      </div>
+  
+    <div></div>
+    <button class="btn btn-primary" >Submit</button>
+    <div></div>
+</form>
+</div>
+</div>
